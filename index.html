@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Stock</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <style>
+  .navbar-item img {
+    background-color: #d3d3d3;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  .navbar-item:hover {
+    background-color: #888484;
+    color: #000000;
+    border-radius: 5%;
+  }
+
+  .navbar-item:hover {
+    background-color: #666666;
+  }
+  .carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .carousel img {
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    max-height: 400px;
+  }
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .carousel-nav.left {
+    left: 10px;
+  }
+  .carousel-nav.right {
+    right: 10px;
+  }
+</style>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init('YOUR_USER_ID');
+    })();
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            const offsetTop = targetElement.offsetTop;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav class="navbar is-size-4 p-4" role="navigation" aria-label="main navigation" style="background-color: #444444;">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="klipartz.png" alt="Car Stock Logo" style="margin-right: 8px;">
+        <strong style="color: #ffffff;">Car Stock</strong>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" style="background-color: #ffffff;">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu" style="background-color: #444444;">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#sobre-nosotros" style="color: #ffffff;">
+          Sobre nosotros
+        </a>
+        <a class="navbar-item" href="#servicios" style="color: #ffffff;">
+          Servicios
+        </a>
+        <a class="navbar-item" href="#contacto" style="color: #ffffff;">
+          Contacto
+        </a>
+      </div>
+      <div class="navbar-end">
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-size-4 is-bold" style="background-color: #e0e0e0;">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1" style="color: #333333;">
+          Bienvenido a <span class="has-text-primary">Car Stock</span>
+        </h1>
+        <h2 class="subtitle is-4" style="color: #555555;">
+          La mejor selección de coches al mejor precio.
+        </h2>
+        <div class="carousel-wrapper">
+          <button class="carousel-nav left">&lt;</button>
+          <div class="carousel">
+            <img src="leon.jpg" alt="Carro 1">
+            <img src="audi.jpeg" alt="Carro 2">
+            <img src="furgoneta.jpg" alt="Carro 3">
+          </div>
+          <button class="carousel-nav right">&gt;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-nosotros" class="section" style="background-color: #f0f0f0;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters has-text-justified">
+          <h3 class="title is-3">Sobre Nosotros</h3>
+          <p>Car Stock es una empresa dedicada a ofrecer una selección de coches de alta calidad al mejor precio. Nuestra misión es proporcionar a nuestros clientes vehículos fiables y económicos de segunda mano. Visítanos para encontrar el coche perfecto para ti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section" style="background-color: #f0f0f0;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters has-text-justified">
+          <h3 class="title is-3">Ventas y Alquileres</h3>
+
+
+          <p>En Car Stock, nos especializamos en una amplia gama de servicios de ventas y alquileres para satisfacer las diversas necesidades de nuestros clientes.</p>
+          <br>
+          <p><strong>Alquileres:</strong> Disponemos de una amplia gama de vehículos en alquiler, adecuados para cualquier ocasión. Desde coches económicos para el día a día hasta vehículos más grandes para viajes en familia. Nos aseguramos de que todos nuestros vehículos de alquiler cumplan con los más altos estándares de calidad y comodidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section" style="background-color: #f0f0f0;">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters has-text-justified">
+          <h3 class="title is-3">Contacto</h3>
+          <p>Podeis encontrarnos en Instagram, X, Tik-tok y Facebook con el nombre de Car__Stock_es</p>
+          <br>
+          <p>Adicionalmente, si quereis contactar con nosotros teneis la opcion de enviarnos un E-mail que responderemos tan pronto como sea posible.</p>
+          <br>
+          <form id="contactForm">
+            <div class="field">
+              <label class="label">Nombre</label>
+              <div class="control">
+                <input class="input" type="text" id="name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Correo Electrónico</label>
+              <div class="control">
+                <input class="input" type="email" id="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Mensaje</label>
+              <div class="control">
+                <textarea class="textarea" id="message" required></textarea>
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" type="submit">Enviar</button>
+              </div>
+              <div class="control">
+                <button class="button is-link is-light" type="reset">Cancelar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background-color: #444444;">
+    <div class="content has-text-centered">
+      <p>
+        <strong class="has-text-light">Car Stock</strong> &copy; 2024. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.querySelector('.carousel');
+      const images = document.querySelectorAll('.carousel img');
+      const leftButton = document.querySelector('.carousel-nav.left');
+      const rightButton = document.querySelector('.carousel-nav.right');
+      let currentIndex = 0;
+
+      leftButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = images.length - 1;
+        }
+        updateCarousel();
+      });
+
+      rightButton.addEventListener('click', () => {
+        if (currentIndex < images.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        updateCarousel();
+      });
+
+      function updateCarousel() {
+        const width = carousel.clientWidth;
+        carousel.style.transform = `translateX(-${currentIndex * width}px)`;
+      }
+
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+          emailjs.send('7e5vp6h', '0cvf5rv', {
+            from_name: name,
+            from_email: email,
+            message: message
+          }).then((response) => {
+            alert('Mensaje enviado con éxito');
+            contactForm.reset();
+          }, (error) => {
+            alert('Error al enviar el mensaje: ' + error);
+          });
+        } else {
+          alert('Todos los campos deben estar completados.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
